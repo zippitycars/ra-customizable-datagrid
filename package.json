@@ -8,7 +8,8 @@
     "demo": "npm run start --prefix ./demo",
     "demo-install": "yarn install --cwd ./demo && yarn install && npm run install:peers",
     "install:peers": "yarn add -P $(jq -r '.peerDependencies | to_entries | map(\"\\(.key)@\\(.value | tostring)\") | join(\" \")' package.json)",
-    "prettier-js": "prettier --write '{src,demo}/**/*.js'"
+    "prettier-js": "prettier --write '{src,demo}/**/*.js'",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
